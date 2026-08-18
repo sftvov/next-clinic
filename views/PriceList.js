@@ -1,7 +1,7 @@
 export default function PriceList({ prices, title = 'Прайс-лист услуг' }) {
   if (!prices || prices.length === 0) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      <div className="section">
         <div className="bg-gray-50 rounded-xl p-6 text-center text-gray-500">
           Нет доступных услуг
         </div>
@@ -10,7 +10,7 @@ export default function PriceList({ prices, title = 'Прайс-лист усл�
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
+    <div className="section">
       <h2 className="text-2xl font-bold mb-4">{title}</h2>
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
         <table className="w-full">

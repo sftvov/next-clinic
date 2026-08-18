@@ -1,5 +1,6 @@
 import Database from 'better-sqlite3';
 import path from 'path';
+import Breadcrumbs from '@/layouts/Breadcrumbs';
 import DoctorsList from '@/views/DoctorsList';
 
 export default async function DoctorsPage() {
@@ -33,5 +34,15 @@ export default async function DoctorsPage() {
 
   db.close();
 
-  return <DoctorsList doctors={doctors} />;
+  const breadcrumbs = [
+    { label: 'Главная', href: '/' },
+    { label: 'Врачи', href: null },
+  ];
+
+  return (
+    <>
+      <Breadcrumbs items={breadcrumbs} />
+      <DoctorsList doctors={doctors} />
+    </>
+  );
 }

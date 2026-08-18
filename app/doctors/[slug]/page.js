@@ -1,6 +1,6 @@
 import Database from 'better-sqlite3';
 import path from 'path';
-import { notFound } from 'next/navigation';
+import Breadcrumbs from '@/layouts/Breadcrumbs';
 import DoctorProfile from '@/views/DoctorProfile';
 import PriceList from '@/views/PriceList';
 
@@ -68,10 +68,17 @@ export default async function DoctorPage({ params }) {
     ORDER BY p.price ASC
   `).all(doctor.id);
 
-  db.close();
+  db.close(); 
+
+  const breadcrumbs = [
+    { label: 'Главная', href: '/' },
+    { label: 'Врачи', href: '/doctors' },
+    { label: doctor.name, href: null },
+  ];
 
   return (
     <>
+      <Breadcrumbs items={breadcrumbs}/>
       <DoctorProfile doctor={doctor} />
       <PriceList prices={prices} />
     </>

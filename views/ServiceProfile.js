@@ -10,9 +10,9 @@ export default function ServiceProfile({ service }) {
             style={{ viewTransitionName: `image-${service.id}` }}
           >
             <img
+              className="w-full h-full object-cover"
               src={`/img/services/${service.id}/service.png`}
               alt={service.name}
-              className="w-full h-full object-cover" 
               fetchPriority="high"
               loading="eager"
             />

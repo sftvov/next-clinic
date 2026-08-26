@@ -7,7 +7,10 @@ export default function DoctorProfile({ doctor }) {
         {/* Информация */}
         <div className="lg:ml-40 flex flex-col flex-1 gap-8 ml-auto">
           <div className="flex flex-col gap-2">
-            <h1 className="text-indigo t1" style={{ viewTransitionName: `name-${doctor.id}` }}>
+            <h1 
+              className="text-indigo t1"
+              style={{ viewTransitionName: `name-${doctor.id}` }}
+            >
               {doctor.name}
             </h1>
 
@@ -37,7 +40,13 @@ export default function DoctorProfile({ doctor }) {
         {/* Фото */}
         <div className="lg:w-1/4 flex justify-center">
           <div className="w-full aspect-2/3 rounded-2xl overflow-hidden shadow-lg" style={{ viewTransitionName: `image-${doctor.id}` }}>
-            <img src={`/img/doctors/${doctor.id}/profile@0.6x.webp`} alt={doctor.name} className="w-full h-full object-cover" fetchPriority="high" loading="eager" />
+            <img 
+              className="w-full h-full object-cover"
+              src={`/img/doctors/${doctor.id}/profile@0.6x.webp`} 
+              alt={doctor.name} 
+              fetchPriority="high" 
+              loading="eager" 
+            />
           </div>
         </div>
       </div>

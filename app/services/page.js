@@ -17,8 +17,10 @@ export default async function ServicesPage() {
 
   return (
     <>
-      <Breadcrumbs items={breadcrumbs}/>
-      <ServicesList services={services} />
+      <Breadcrumbs items={breadcrumbs}/>      
+      <div className='wrapper'>
+        <ServicesList services={services} />
+      </div>
     </>
   );
 }

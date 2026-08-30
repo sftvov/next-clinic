@@ -79,8 +79,10 @@ export default async function DoctorPage({ params }) {
   return (
     <>
       <Breadcrumbs items={breadcrumbs}/>
-      <DoctorProfile doctor={doctor} />
-      <PriceList prices={prices} />
+      <div className='wrapper'>
+        <DoctorProfile doctor={doctor} />
+        <PriceList prices={prices} />
+      </div>
     </>
   );
 }

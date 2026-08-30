@@ -10,7 +10,6 @@
 }
 
 :root {
-
   --font-heading: 'Inter', system-ui, sans-serif;
   --font-body: 'Roboto', system-ui, sans-serif;
   --font-accent: 'Montserrat', system-ui, sans-serif;
@@ -44,31 +43,31 @@ body {
   .a1 {
     font-family: var(--font-accent);
   }
-  
+
   .t1 {
     @apply font-bold leading-tight;
-    font-size: clamp(26px, 4vw, 32px);
+    font-size: clamp(22px, 4vw, 28px);
   }
   .t2 {
     @apply font-semibold leading-tight;
-    font-size: clamp(20px, 3vw, 26px);
+    font-size: clamp(16px, 3vw, 22px);
   }
   .t3 {
     @apply font-semibold leading-snug;
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: clamp(14px, 2vw, 20px);
   }
 
   .p1 {
     @apply font-normal leading-relaxed;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: clamp(14px, 2vw, 16px);
   }
   .p2 {
     @apply font-normal leading-relaxed;
-    font-size: clamp(12px, 1.5vw, 16px);
+    font-size: clamp(12px, 1.5vw, 14px);
   }
   .p3 {
     @apply font-normal leading-relaxed;
-    font-size: clamp(10px, 1.2vw, 14px);
+    font-size: clamp(10px, 1.2vw, 12px);
   }
 
   .a1 {
@@ -87,7 +86,23 @@ body {
 }
 
 @layer components {
+  .wrapper {
+    @apply flex flex-col gap-16 w-full;
+  }
   .section {
-    @apply container mx-auto px-4;
+    @apply container min-w-xs mx-auto px-4;
+  }
+
+  .link {
+    @apply transition-colors duration-300;
+    color: var(--color-ruby);
+    &:focus-visible {
+      color: var(--color-burgundy);
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-burgundy);
+      }
+    }
   }
 }

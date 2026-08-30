@@ -49,8 +49,10 @@ export default async function ServicePage({ params }) {
   return (    
     <>
       <Breadcrumbs items={breadcrumbs}/>
-      <ServiceProfile service={service} />
-      <PriceList prices={prices} />
+      <div className='wrapper'>
+        <ServiceProfile service={service} />
+        <PriceList prices={prices} />
+      </div>
     </>
   )
 }

@@ -11,30 +11,40 @@ export default function PriceList({ prices, title = 'Прайс-лист усл�
 
   return (
     <div className="section">
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <table className="w-full">
-          <thead className="bg-gray-50 border-b border-gray-200">
-            <tr>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Услуга</th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Код</th>
-              <th className="px-6 py-3 text-right text-sm font-medium text-gray-700">Цена</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100">
-            {prices.map((item, index) => (
-              <tr key={index} className="hover:bg-gray-50 transition-colors">
-                <td className="px-6 py-4 text-sm text-gray-800">{item.name}</td>
-                <td className="px-6 py-4 text-sm text-gray-500 font-mono">{item.code}</td>
-                <td className="px-6 py-4 text-sm font-semibold text-gray-900 text-right">
-                  {item.price.toLocaleString()} ₽
-                </td>
+      <div className="flex flex-col bg-white rounded-xl">
+        <h2 className="text-indigo t1 px-4 py-8 xl:px-8  ">{title}</h2>
+        <div className="overflow-auto xl:mx-4 bg-white border-gray-200 rounded-xl border">
+          {/* Таблица */}
+          <table className="w-full">
+            {/* Заголовки */}
+            <thead className="border-b border-gray-200">
+              <tr>
+                <th className="t3 text-left px-4 py-2">Услуга</th>
+                <th className="t3 text-left hidden sm:table-cell px-4 py-2">Код</th>
+                <th className="t3 text-right px-4 py-2">Цена</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="px-6 py-3 bg-gray-50 border-t border-gray-200 text-xs text-gray-500">
-          Всего услуг: {prices.length}
+            </thead>
+            {/* Основное тело таблицы */}
+            <tbody className="divide-y divide-gray-100">
+              {prices.map((item, index) => (
+                <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                  <td className="p-4">
+                    <div className="flex flex-col gap-2">
+                      <span className="p1">{item.name}</span> 
+                      <span className="text-gray-500 font-mono p1 sm:hidden">{item.code}</span>
+                    </div>
+                  </td>
+                  <td className="text-gray-500 font-mono p1 hidden sm:table-cell p-4">{item.code}</td>
+                  <td className="text-burgundy p1 text-right p-4">
+                    {item.price.toLocaleString()}&nbsp;₽
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="p2 px-6 py-3 border-t border-gray-200">
+            Всего услуг: {prices.length}
+          </div>
         </div>
       </div>
     </div>

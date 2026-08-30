@@ -1,29 +1,38 @@
-import { redirect } from 'next/navigation';
+import Breadcrumbs from '@/layouts/Breadcrumbs';
 import { Link } from 'next-view-transitions';
+
+const breadcrumbs = [
+  { label: 'Главная', href: null },
+];
 
 export default function Home() {
   return(
-    <section className="max-w-7xl mx-auto px-4 py-12">
-      <ul className='flex flex-col items-start'>
-        <li>
-          <Link 
-            href={`/doctors/`} 
-            className="inline-block mt-auto text-blue-600 hover:underline font-medium"
-            style={{ viewTransitionName: `doctors` }}            
-          >
-            Наши врачи
-          </Link>
-        </li>
-        <li>
-          <Link 
-            href={`/services/`} 
-            className="inline-block mt-auto text-blue-600 hover:underline font-medium"
-            style={{ viewTransitionName: `services` }}
-          >
-            Наши услуги
-          </Link>
-        </li>
-      </ul>
-    </section>
+    <>
+      <Breadcrumbs items={breadcrumbs}/>    
+      <div className="wrapper">
+        <div className="section">
+          <ul className='flex flex-col items-start'>
+            <li>
+              <Link 
+                href={`/doctors/`} 
+                className="link p1"
+                style={{ viewTransitionName: `doctors` }}            
+              >
+                Наши врачи
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href={`/services/`} 
+                className="link p1"
+                style={{ viewTransitionName: `services` }}
+              >
+                Наши услуги
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </>
   )
 }

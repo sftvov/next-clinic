@@ -41,8 +41,10 @@ export default async function DoctorsPage() {
 
   return (
     <>
-      <Breadcrumbs items={breadcrumbs} />
-      <DoctorsList doctors={doctors} />
+      <Breadcrumbs items={breadcrumbs} />      
+      <div className='wrapper'>
+        <DoctorsList doctors={doctors} />
+      </div>
     </>
   );
 }

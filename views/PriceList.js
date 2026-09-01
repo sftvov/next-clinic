@@ -13,7 +13,7 @@ export default function PriceList({ prices, title = 'Прайс-лист усл�
     <div className="section">
       <div className="flex flex-col bg-white rounded-xl">
         <h2 className="text-indigo t1 px-4 py-8 xl:px-8  ">{title}</h2>
-        <div className="overflow-auto xl:mx-4 bg-white border-gray-200 rounded-xl border">
+        <div className="overflow-auto mb-8 xl:mx-4 bg-white border-gray-200 rounded-xl border">
           {/* Таблица */}
           <table className="w-full">
             {/* Заголовки */}
@@ -27,7 +27,7 @@ export default function PriceList({ prices, title = 'Прайс-лист усл�
             {/* Основное тело таблицы */}
             <tbody className="divide-y divide-gray-100">
               {prices.map((item, index) => (
-                <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                <tr key={index} className={index % 2 === 0 ? '' : 'bg-gray-50'}>
                   <td className="p-4">
                     <div className="flex flex-col gap-2">
                       <span className="p1">{item.name}</span> 

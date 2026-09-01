@@ -46,11 +46,11 @@ body {
 
   .t1 {
     @apply font-bold leading-tight;
-    font-size: clamp(22px, 4vw, 28px);
+    font-size: clamp(22px, 2.5vw, 36px);
   }
   .t2 {
     @apply font-semibold leading-tight;
-    font-size: clamp(16px, 3vw, 22px);
+    font-size: clamp(16px, 2.5vw, 28px);
   }
   .t3 {
     @apply font-semibold leading-snug;
@@ -59,15 +59,15 @@ body {
 
   .p1 {
     @apply font-normal leading-relaxed;
-    font-size: clamp(14px, 2vw, 16px);
+    font-size: clamp(14px, 2vw, 18px);
   }
   .p2 {
     @apply font-normal leading-relaxed;
-    font-size: clamp(12px, 1.5vw, 14px);
+    font-size: clamp(12px, 1.5vw, 16px);
   }
   .p3 {
     @apply font-normal leading-relaxed;
-    font-size: clamp(10px, 1.2vw, 12px);
+    font-size: clamp(10px, 1.2vw, 14px);
   }
 
   .a1 {

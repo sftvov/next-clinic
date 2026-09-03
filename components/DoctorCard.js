@@ -4,7 +4,7 @@ export default function DoctorCard({ doctor }) {
   return (
     <article 
       id={`doctor-${doctor.id}`}
-      className="duration-200 flex flex-col gap-2 xs:gap-4 bg-white rounded-xl p-2 md:p-4 shadow-md hover:shadow-lg scroll-mt-4"
+      className="duration-300 flex flex-col gap-2 xs:gap-4 bg-white rounded-xl p-2 md:p-4 shadow-md hover:shadow-lg scroll-mt-4"
     >
       
       <div 

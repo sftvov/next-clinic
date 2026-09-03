@@ -83,7 +83,7 @@ body {
   }
 
   .btn-solid {
-    @apply duration-200 text-center px-4 py-2 bg-ruby text-white rounded-lg hover:bg-burgundy;
+    @apply duration-300 text-center px-4 py-2 bg-ruby text-white rounded-lg hover:bg-burgundy;
   }
 }
 
@@ -96,7 +96,7 @@ body {
   }
 
   .link {
-    @apply transition-colors duration-200;
+    @apply transition-colors duration-300;
     color: var(--color-ruby);
     &:focus-visible {
       color: var(--color-burgundy);

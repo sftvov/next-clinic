@@ -4,7 +4,7 @@ export default function ServiceCard({ service }) {
   return (
     <article 
       id={`service-${service.id}`}
-      className="scroll-mt-4 duration-200 transition-shadow flex flex-col gap-4 bg-white rounded-xl p-4 shadow-md hover:shadow-lg"
+      className="scroll-mt-4 duration-300 transition-shadow flex flex-col gap-4 bg-white rounded-xl p-4 shadow-md hover:shadow-lg"
     >
       {/* Картинка (квадратная, слева) */}
       <div 

@@ -105,15 +105,15 @@ export default async function SqlTestPage() {
   db.close();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">🧪 SQL Тестирование</h1>
-
-      {/* <SqlQuery query={doctorsQuery} data={doctors} title="👨‍⚕️ Врачи со специальностями и ценами" /> */}
-      {/* <SqlQuery query={specialtiesCountQuery} data={specialtiesCount} title="📊 Специальности с количеством врачей" /> */}
-      {/* <SqlQuery query={servicesQuery} data={services} title="💊 Услуги с минимальной ценой" /> */}
-      {/* <SqlQuery query={oldestDoctorsQuery} data={oldestDoctors} title="📅 Врачи с максимальным стажем" /> */}
-      <SqlQuery query={priceFromDoctorsQuery} data={priceFromDoctors} title="💰 Самые дорогие прайс-услуги" />
-
+    <div className="section">
+      <div className="flex flex-col gap-8">
+        <h1 className="t1">🧪 SQL Тестирование</h1>
+        <SqlQuery query={doctorsQuery} data={doctors} title="👨‍⚕️ Врачи со специальностями и ценами" />
+        <SqlQuery query={specialtiesCountQuery} data={specialtiesCount} title="📊 Специальности с количеством врачей" />
+        <SqlQuery query={servicesQuery} data={services} title="💊 Услуги с минимальной ценой" />
+        <SqlQuery query={oldestDoctorsQuery} data={oldestDoctors} title="📅 Врачи с максимальным стажем" />
+        <SqlQuery query={priceFromDoctorsQuery} data={priceFromDoctors} title="💰 Самые дорогие прайс-услуги" />
+      </div>
     </div>
   );
 }

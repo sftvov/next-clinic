@@ -4,15 +4,15 @@ export default function ServiceCard({ service }) {
   return (
     <article 
       id={`service-${service.id}`}
-      className="flex gap-4 bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-200 scroll-mt-4"
+      className="scroll-mt-4 duration-200 transition-shadow flex flex-col gap-4 bg-white rounded-xl p-4 shadow-md hover:shadow-lg"
     >
       {/* Картинка (квадратная, слева) */}
       <div 
-        className="w-1/3 aspect-square rounded-lg overflow-hidden flex-shrink-0"
-        style={{ viewTransitionName: `image-${service.id}` }}
+        className="overflow-hidden flex items-center w-full"
       >
         <img
-          className="w-full h-full object-cover"
+          className="w-full aspect-3/2 object-cover rounded-lg"
+          style={{ viewTransitionName: `image-${service.id}` }}
           src={`/img/services/${service.id}/service.png`}
           alt={service.name}
           fetchPriority="high"

@@ -2,7 +2,7 @@ export default function SqlQuery({ query, data, title }) {
   if (!data || data.length === 0) {
     return (
       <div className="mb-8">
-        {title && <h2 className="text-2xl font-semibold mb-4">{title}</h2>}
+        {title && <h2 className="t2 mb-4">{title}</h2>}
         <div className="bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
           <pre className="text-sm text-gray-700 whitespace-pre-wrap">{query}</pre>
         </div>
@@ -15,7 +15,7 @@ export default function SqlQuery({ query, data, title }) {
 
   return (
     <div className="mb-12">
-      {title && <h2 className="text-2xl font-semibold mb-4">{title}</h2>}
+      {title && <h2 className="t2 mb-4">{title}</h2>}
 
       {/* Отображение SQL-запроса */}
       <div className="bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">

@@ -6,7 +6,8 @@ import ServicesList from '@/views/ServicesList';
 export default async function ServicesPage() {
   const db = new Database(path.join(process.cwd(), 'dev.db'));
 
-  const services = db.prepare('SELECT * FROM services').all();
+  const initialServices = db.prepare('SELECT * FROM services LIMIT 12').all();
+  const { total } = db.prepare('SELECT COUNT(*) as total FROM services').get();
 
   db.close();
 
@@ -19,7 +20,7 @@ export default async function ServicesPage() {
     <>
       <Breadcrumbs items={breadcrumbs}/>      
       <div className='wrapper'>
-        <ServicesList services={services} />
+        <ServicesList initialServices={initialServices} total={total} />
       </div>
     </>
   );

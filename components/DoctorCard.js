@@ -9,7 +9,7 @@ export default function DoctorCard({ doctor }) {
       
       <div 
         className="w-full aspect-2/3 rounded-lg overflow-hidden"
-        style={{ viewTransitionName: `image-${doctor.id}` }}
+        style={{ viewTransitionName: `image-doctor-${doctor.id}` }}
       >
         <img 
           src={`/img/doctors/${doctor.id}/profile@0.4x.webp`}
@@ -23,7 +23,7 @@ export default function DoctorCard({ doctor }) {
       <div className='flex flex-col flex-1'>
         <h2 
           className="text-indigo t3"
-          style={{ viewTransitionName: `name-${doctor.id}` }}
+          style={{ viewTransitionName: `name-doctor-${doctor.id}` }}
         >
           {doctor.name}
         </h2>
@@ -31,7 +31,7 @@ export default function DoctorCard({ doctor }) {
         <div className='mt-auto'>
           <p 
             className="text-gray-600 p2"
-            style={{ viewTransitionName: `speciality-${doctor.id}` }}
+            style={{ viewTransitionName: `speciality-doctor-${doctor.id}` }}
           >
             {doctor.specialties || 'Специальность не указана'}
           </p>

@@ -6,7 +6,8 @@ import DoctorsList from '@/views/DoctorsList';
 export default async function DoctorsPage() {
   const db = new Database(path.join(process.cwd(), 'dev.db'));
 
-  const doctors = db.prepare(`
+  // Первые 12 врачей
+  const initialDoctors = db.prepare(`
     SELECT 
       d.id,
       d.name,
@@ -30,7 +31,10 @@ export default async function DoctorsPage() {
       ) AS price_from
     FROM doctors d
     ORDER BY d.name
+    LIMIT 12
   `).all();
+
+  const { total } = db.prepare('SELECT COUNT(*) as total FROM doctors').get();
 
   db.close();
 
@@ -41,9 +45,9 @@ export default async function DoctorsPage() {
 
   return (
     <>
-      <Breadcrumbs items={breadcrumbs} />      
+      <Breadcrumbs items={breadcrumbs} />
       <div className='wrapper'>
-        <DoctorsList doctors={doctors} />
+        <DoctorsList initialDoctors={initialDoctors} total={total} />
       </div>
     </>
   );

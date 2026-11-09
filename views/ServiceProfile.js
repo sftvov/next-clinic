@@ -7,7 +7,7 @@ export default function ServiceProfile({ service }) {
         <div className="lg:w-3/5 flex justify-center">
           <div
             className="w-full aspect-3/2 rounded-2xl overflow-hidden shadow-lg"
-            style={{ viewTransitionName: `image-${service.id}` }}
+            style={{ viewTransitionName: `image-service-${service.id}` }}
           >
             <img
               className="w-full h-full object-cover"
@@ -21,7 +21,7 @@ export default function ServiceProfile({ service }) {
         <div className='lg:w-2/5 flex flex-col gap-2' >
           <h1
             className="text-indigo t2"
-            style={{ viewTransitionName: `name-${service.id}` }}
+            style={{ viewTransitionName: `name-service-${service.id}` }}
           >
             {service.name}
           </h1>

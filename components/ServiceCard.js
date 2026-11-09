@@ -12,7 +12,7 @@ export default function ServiceCard({ service }) {
       >
         <img
           className="w-full aspect-3/2 object-cover rounded-lg"
-          style={{ viewTransitionName: `image-${service.id}` }}
+          style={{ viewTransitionName: `image-service-${service.id}` }}
           src={`/img/services/${service.id}/service.png`}
           alt={service.name}
           fetchPriority="high"
@@ -24,7 +24,7 @@ export default function ServiceCard({ service }) {
       <div className="flex flex-col flex-1">
         <h3 
           className="text-indigo t3"
-          style={{ viewTransitionName: `name-${service.id}` }}
+          style={{ viewTransitionName: `name-service-${service.id}` }}
         >
           <Link href={`/services/${service.slug}`} className="hover:text-ruby transition-colors">
             {service.name}

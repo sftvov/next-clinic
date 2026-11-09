@@ -9,12 +9,12 @@ export default function DoctorProfile({ doctor }) {
           <div className="flex flex-col gap-2">
             <h1 
               className="text-indigo t2"
-              style={{ viewTransitionName: `name-${doctor.id}` }}
+              style={{ viewTransitionName: `name-doctor-${doctor.id}` }}
             >
               {doctor.name}
             </h1>
 
-            <p className="text-gray-600 p1" style={{ viewTransitionName: `speciality-${doctor.id}` }}>
+            <p className="text-gray-600 p1" style={{ viewTransitionName: `speciality-doctor-${doctor.id}` }}>
               {doctor.specialties || 'Специальность не указана'}
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function DoctorProfile({ doctor }) {
           )}
         </div>
         {/* Фото */}
-        <div className="overflow-hidden sm:w-1/4 sm:aspect-2/3 rounded-2xl shadow-lg" style={{ viewTransitionName: `image-${doctor.id}` }}>
+        <div className="overflow-hidden sm:w-1/4 sm:aspect-2/3 rounded-2xl shadow-lg" style={{ viewTransitionName: `image-doctor-${doctor.id}` }}>
           <img 
             className="w-full max-w-sm sm:max-w-none h-full object-cover"
             src={`/img/doctors/${doctor.id}/profile@0.6x.webp`} 
